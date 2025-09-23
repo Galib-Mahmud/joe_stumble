@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUtil
 import 'package:get/get.dart';
+import 'package:joe_stumble/feature/auth/select_avatar_screen.dart';
 import '../widget/splash/custom_button.dart'; // Import CustomButton widget
 
 class Question4 extends StatefulWidget {
@@ -76,6 +77,8 @@ class _Question4State extends State<Question4> {
             // Next Button
             Spacer(),
            CustomButton(text: 'Next', onPressed: () {
+
+             Get.to(SelectAvatar());
 
            },)
           ],

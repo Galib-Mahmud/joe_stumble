@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUtil
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/splash/question2.dart';
+import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 
 import '../widget/splash/custom_button.dart';
 
@@ -24,17 +25,7 @@ class _Question1State extends State<Question1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Image.asset(
-          'assets/images/splash/Stumble 2.png', // Path to your image
-          height: 30.h, // Adjust the size of the image if needed
-          width: 115.w,
-          fit: BoxFit.cover,
-        ),
-      ),
+      appBar: CustomAppBar(),
       body: Padding(
         padding: EdgeInsets.all(16.0.w),
         child: Column(
@@ -69,11 +60,11 @@ class _Question1State extends State<Question1> {
             // Radio Buttons (Options)
             Column(
               children: [
-                _buildRadioOption('In a relationship, but it’s ending'),
-                _buildRadioOption('Newly single / freshly divorced'),
-                _buildRadioOption('Stuck in back-and-forth or complicated'),
-                _buildRadioOption('Broken up, still healing'),
-                _buildRadioOption('Trying to repair or rebuild'),
+                buildRadioOption('In a relationship, but it’s ending'),
+                buildRadioOption('Newly single / freshly divorced'),
+                buildRadioOption('Stuck in back-and-forth or complicated'),
+                buildRadioOption('Broken up, still healing'),
+                buildRadioOption('Trying to repair or rebuild'),
               ],
             ),
 
@@ -95,7 +86,7 @@ class _Question1State extends State<Question1> {
   }
 
   // Helper function to build each radio button option
-  Widget _buildRadioOption(String value) {
+  Widget buildRadioOption(String value) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       title: Text(value, style: TextStyle(fontSize: 16.sp, color: Colors.black)),
