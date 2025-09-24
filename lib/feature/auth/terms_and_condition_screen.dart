@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:joe_stumble/feature/auth/get_mentor.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 
@@ -117,8 +118,7 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
             CustomButton(
               text: "I agree",
               onPressed: () {
-                // Action after agreeing
-                Get.snackbar("Terms Accepted", "You have accepted the terms.");
+                Get.to(GetMentor());
               },
             ),
 

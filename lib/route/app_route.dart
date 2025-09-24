@@ -1,6 +1,8 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:joe_stumble/feature/auth/sign_in_screen.dart';
+import 'package:joe_stumble/feature/community/community_picker_screen.dart';
+import 'package:joe_stumble/feature/home/home_dashboard_screen.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen1.dart';
 import 'package:joe_stumble/route/route_name.dart';
 
@@ -24,7 +26,18 @@ class AppRoute {
       page: () => SignInScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
+    ), GetPage(
+      name: RouteName.community,
+      page: () => CommunityPickerScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.homeDashBoard,
+      page: () => HomeDashboardScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
     ),
+
 
 
 

@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: CustomTheme.themeData, // Using your custom theme
-          initialRoute: RouteName.signin,
+          initialRoute: RouteName.homeDashBoard,
           getPages: AppRoute.pages,
         );
       },
