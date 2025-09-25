@@ -5,6 +5,7 @@ import 'package:joe_stumble/feature/auth/gender_screen.dart';
 import 'package:joe_stumble/feature/splash/question1.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class FindYourTribeScreen extends StatefulWidget {
   const FindYourTribeScreen({super.key});
@@ -54,7 +55,7 @@ class _FindYourTribeScreenState extends State<FindYourTribeScreen> {
                 CustomButton(
                   text: "Take a quiz",
                   onPressed: () {
-                    Get.to( Question1());
+                  Get.toNamed(RouteName.question1);
                   },
                 ),
 

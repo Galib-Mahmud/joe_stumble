@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUti
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/splash/question2.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 import '../widget/splash/custom_button.dart';
 
@@ -73,7 +74,7 @@ class _Question1State extends State<Question1> {
             CustomButton(
               text: 'Next',
               onPressed: () {
-                Get.to(() => Question2());
+             Get.toNamed(RouteName.question2);
 
 
               },

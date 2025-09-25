@@ -7,6 +7,7 @@ import 'package:joe_stumble/feature/auth/username_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_text_field.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Text(
                 "Sign Up",
                 style: TextStyle(
-                  fontSize: 30.sp,
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
@@ -63,7 +64,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
               CustomButton(text: "Sign Up", onPressed: () {
-                Get.to(UserName());
+               Get.toNamed(RouteName.birthday);
               }),
               SizedBox(height: 30.h),
 

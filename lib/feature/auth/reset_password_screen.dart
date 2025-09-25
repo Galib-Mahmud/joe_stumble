@@ -5,6 +5,7 @@ import 'package:joe_stumble/feature/auth/otp_screen.dart';
 import 'package:joe_stumble/feature/auth/sign_up_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 import '../widget/splash/custom_text_field.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
@@ -33,7 +34,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               Text(
                 "Reset Password",
                 style: TextStyle(
-                  fontSize: 30.sp,
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
@@ -61,7 +62,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               CustomButton(
                 text: "Send OTP",
                 onPressed: () {
-                  Get.to(SignUpScreen());
+                Get.toNamed(RouteName.signin);
 
 
                 },

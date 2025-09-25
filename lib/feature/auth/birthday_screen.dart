@@ -6,6 +6,7 @@ import 'package:joe_stumble/feature/auth/gender_screen.dart';
 import 'package:joe_stumble/feature/auth/reset_password_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 import '../widget/splash/custom_text_field.dart';
 
 class BirthdayScreen extends StatefulWidget {
@@ -38,7 +39,7 @@ class _BirthdayScreenState extends State<BirthdayScreen> {
                 Text(
                   "When’s your birthday",
                   style: TextStyle(
-                    fontSize: 30.sp,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
@@ -70,7 +71,7 @@ class _BirthdayScreenState extends State<BirthdayScreen> {
                   text: "Next",
                   onPressed: () {
 
-                    Get.to(GenderScreen());
+                    Get.toNamed(RouteName.gender);
                   },
                 ),
 

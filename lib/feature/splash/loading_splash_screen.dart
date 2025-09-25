@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:flutter/animation.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen1.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
 
     // Navigate to the next screen after 3 seconds
     Future.delayed(Duration(seconds: 3), () {
-      Get.to(() => OnboardingScreen1()); // Replace with your next screen
+  Get.toNamed(RouteName.onboarding1);
     });
   }
 
@@ -59,8 +60,8 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
               },
               child: Image.asset(
                 'assets/images/splash/Stumble 2.png', // Path to your image
-                height: 30.h, // Adjust the size of the image if needed
-                width: 115.w,
+                height: 50.h, // Adjust the size of the image if needed
+                width: 200.w,
                 fit: BoxFit.cover,
               ),
             ),

@@ -4,16 +4,17 @@ import 'package:get/get.dart';
 import 'package:joe_stumble/feature/auth/otp_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 import '../widget/splash/custom_text_field.dart';
 
-class ForgotPasswordScreen extends StatefulWidget {
-  const ForgotPasswordScreen({super.key});
+class ForgetPasswordScreen extends StatefulWidget {
+  const ForgetPasswordScreen({super.key});
 
   @override
-  State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
+  State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
 }
 
-class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +33,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               Text(
                 "Forget Password",
                 style: TextStyle(
-                  fontSize: 30.sp,
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
@@ -45,14 +46,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 width: 340.w,
                 height: 49.h,
               ),
-              SizedBox(height: 30.h),
+              SizedBox(height: 40.h),
           
               // Send OTP Button
               CustomButton(
                 text: "Send OTP",
                 onPressed: () {
 
-                  Get.to(OtpScreen());
+                Get.toNamed(RouteName.otpScreen);
                 },
           
               ),

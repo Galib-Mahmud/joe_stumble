@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:joe_stumble/feature/home/dashboard_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
-import '../widget/home/custom_nav_bar.dart'; // Ensure this points to your CustomNavBar
+import '../widget/home/custom_nav_bar.dart';
 
 class HomeDashboardScreen extends StatefulWidget {
   const HomeDashboardScreen({super.key});
@@ -10,11 +12,13 @@ class HomeDashboardScreen extends StatefulWidget {
 }
 
 class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
+  final String userName = "Galib"; // Replace with dynamic name from backend
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:CustomAppBar(),
-      body: Padding(
+      appBar: const CustomAppBar(), // ✅ fixed appbar
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0), // Padding for the body
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,66 +26,63 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
             // Profile Section
             Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 40,
-                  backgroundImage: AssetImage('assets/images/profile_picture.png'), // Replace with actual profile picture
+                  backgroundImage: AssetImage(
+                    'assets/images/profile_picture.png',
+                  ), // Replace with actual profile picture
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
+
                       'Welcome Back',
                       style: TextStyle(
                         fontSize: 22,
+
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     Text(
-                      'Your Name', // Replace with user's name dynamically
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey,
-                      ),
+                      userName, // dynamic username
+                      style: const TextStyle(fontSize: 16, color: Colors.grey),
                     ),
                   ],
                 ),
               ],
             ),
-            SizedBox(height: 40), // Space after profile section
-
+            const SizedBox(height: 40), // Space after profile section
             // Buttons (Tribe, Content Path, Journal, Support)
-            GridView.count(
-              crossAxisCount: 2,
-              mainAxisSpacing: 16,
-              crossAxisSpacing: 16,
-              shrinkWrap: true, // To prevent scrolling issues
-              childAspectRatio: 1.5, // Adjust the size of the buttons
+            Wrap(
+              spacing: 16,
+              runSpacing: 16,
               children: [
-                _buildButton('Tribe', Icons.group),
-                _buildButton('Content Path', Icons.arrow_forward),
-                _buildButton('Journal', Icons.book),
-                _buildButton('Support', Icons.help_outline),
+                _buildButton('Tribe', Icons.group, '/tribe'),
+                _buildButton(
+                  'Content Path',
+                  Icons.arrow_forward,
+                  '/contentPath',
+                ),
+                _buildButton('Journal', Icons.book, '/journal'),
+                _buildButton('Support', Icons.help_outline, '/support'),
               ],
             ),
-            SizedBox(height: 40), // Space before mood check-in section
-
+            const SizedBox(height: 40), // Space before mood check-in section
             // Mood Check-in Section (Emojis)
-            Text(
+            const Text(
               'Mood Check-in',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
+            const SizedBox(height: 12),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                _buildMoodEmoji('😢'),
-                _buildMoodEmoji('😞'),
-                _buildMoodEmoji('🙂'),
-                _buildMoodEmoji('😁'),
-              ],
+                '😢',
+                '😞',
+                '🙂',
+                '😁',
+              ].map((emoji) => _buildMoodEmoji(emoji)).toList(),
             ),
           ],
         ),
@@ -90,27 +91,29 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     );
   }
 
-  // Utility method to create a button
-  Widget _buildButton(String label, IconData icon) {
-    return GestureDetector(
+  // Utility method to create a button with ripple effect
+  Widget _buildButton(String label, IconData icon, String route) {
+    return InkWell(
       onTap: () {
-        // Handle button press here (navigate to respective pages)
-        print('$label pressed');
+        // Navigator.pushNamed(context, route); // ✅ Navigate to route
+        Get.to(DashboardScreen());
       },
+      borderRadius: BorderRadius.circular(12),
       child: Container(
-        padding: EdgeInsets.all(16),
+        width: MediaQuery.of(context).size.width * 0.4, // responsive width
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Color(0xFFFB8C00), // Orange background color
+          color: const Color(0xFFFB8C00), // Orange background color
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon, size: 40, color: Colors.white),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
@@ -122,15 +125,15 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     );
   }
 
-  // Utility method to create mood emojis
+  // Utility method to create mood emojis with tap interaction
   Widget _buildMoodEmoji(String emoji) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: Text(
-        emoji,
-        style: TextStyle(
-          fontSize: 40,
-        ),
+      child: InkWell(
+        onTap: () {
+          debugPrint("Mood selected: $emoji"); // Replace with API call
+        },
+        child: Text(emoji, style: const TextStyle(fontSize: 40)),
       ),
     );
   }

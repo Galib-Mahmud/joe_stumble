@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUti
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen3.dart';
 import 'package:joe_stumble/feature/splash/question4.dart';
+import 'package:joe_stumble/route/route_name.dart';
 import '../widget/splash/custom_button.dart'; // Import CustomButton widget
 
 class Question3 extends StatefulWidget {
@@ -79,7 +80,7 @@ class _Question3State extends State<Question3> {
             Spacer(),
          CustomButton(text: "Next", onPressed: () {
 
-           Get.to(Question4());
+           Get.toNamed(RouteName.question4);
 
          },)
           ],

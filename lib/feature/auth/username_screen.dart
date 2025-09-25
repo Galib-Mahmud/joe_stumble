@@ -6,6 +6,7 @@ import 'package:joe_stumble/feature/auth/birthday_screen.dart';
 import 'package:joe_stumble/feature/auth/reset_password_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 import '../widget/splash/custom_text_field.dart';
 
 class UserName extends StatefulWidget {
@@ -75,7 +76,7 @@ class _UserNameState extends State<UserName> {
                   text: "Next",
                   onPressed: () {
 
-                    Get.to(BirthdayScreen());
+                   Get.toNamed(RouteName.birthday);
                   },
                 ),
 

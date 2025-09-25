@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:joe_stumble/feature/auth/introduce_yourself_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class SelectAvatar extends StatefulWidget {
   const SelectAvatar({super.key});
@@ -105,7 +106,7 @@ class _SelectAvatarState extends State<SelectAvatar> {
               CustomButton(
                 text: "Next",
                 onPressed: () {
-                Get.to(IntroduceYourselfScreen());
+              Get.toNamed(RouteName.introduceYourself);
                 },
               ),
             ],

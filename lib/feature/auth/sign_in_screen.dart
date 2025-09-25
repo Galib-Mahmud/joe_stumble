@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/auth/forgot_password_screen.dart';
-import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
+
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_text_field.dart';
+import 'package:joe_stumble/route/route_name.dart';
+
+import '../widget/splash/custom_appbar.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -33,7 +36,7 @@ class _SignInScreenState extends State<SignInScreen> {
               Text(
                 "Sign In",
                 style: TextStyle(
-                  fontSize: 30.sp,
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
@@ -62,7 +65,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {
-                    Get.to(ForgotPasswordScreen());
+                   Get.toNamed(RouteName.forgetPassword);
                   },
                   child: Text(
                     'Forget Password?',
@@ -142,7 +145,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     style: TextStyle(fontSize: 14.sp),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(RouteName.signUp);
+                    },
                     child: Text(
                       'Sign Up',
                       style: TextStyle(color: Colors.orange),
