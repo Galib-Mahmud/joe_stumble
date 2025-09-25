@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/community/reflection_badge_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class CourageBadgeScreen extends StatelessWidget {
   @override
@@ -84,7 +85,7 @@ class CourageBadgeScreen extends StatelessWidget {
                 // Next Button with Linear Gradient
                 CustomButton(text: "Next", onPressed: () {
 
-                  Get.to(ReflectionBadgeScreen());
+                 Get.toNamed(RouteName.reflectBadge);
 
 
                 },)

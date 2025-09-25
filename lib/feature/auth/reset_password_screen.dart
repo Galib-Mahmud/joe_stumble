@@ -60,7 +60,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
 
               // Send OTP Button
               CustomButton(
-                text: "Send OTP",
+                text: "Confirm",
                 onPressed: () {
                 Get.toNamed(RouteName.signin);
 

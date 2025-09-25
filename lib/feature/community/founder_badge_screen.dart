@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/community/day_one_badge_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class FoundersBadgeScreen extends StatelessWidget {
   @override
@@ -84,7 +85,7 @@ class FoundersBadgeScreen extends StatelessWidget {
                 // Next Button with Linear Gradient
               CustomButton(text: "Next", onPressed: () {
 
-                Get.to(DayOneBadgeScreen());
+                Get.toNamed(RouteName.dayOneBadge);
 
 
               },)

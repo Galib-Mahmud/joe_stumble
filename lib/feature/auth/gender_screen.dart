@@ -5,6 +5,7 @@ import 'package:joe_stumble/feature/auth/find_tribe.dart';
 import 'package:joe_stumble/feature/auth/reset_password_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class GenderScreen extends StatefulWidget {
   const GenderScreen({super.key});
@@ -87,12 +88,9 @@ class _GenderScreenState extends State<GenderScreen> {
                 CustomButton(
                   text: "Next",
                   onPressed: () {
-                    if (_selectedOption != null) {
-                      Get.to( FindYourTribeScreen());
-                    } else {
-                      Get.snackbar("Error", "Please select a gender",
-                          snackPosition: SnackPosition.BOTTOM);
-                    }
+
+                      Get.toNamed(RouteName.findYourTribute);
+
                   },
                 ),
               ],

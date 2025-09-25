@@ -75,7 +75,9 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
 
               // Sign in button
-              CustomButton(text: "Sign In", onPressed: () {}),
+              CustomButton(text: "Sign In", onPressed: () {
+                Get.toNamed(RouteName.homeDashBoard);
+              }),
 
               SizedBox(height: 30.h),
 

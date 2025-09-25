@@ -21,15 +21,23 @@ class RouteName{
   static const String selectAvatar = '/selectAvatar';
   static const String introduceYourself = '/introduceYourself';
   static const String birthdayScreen = '/birthdayScreen';
+  static const String termsandcondition = '/termsandcondition';
+  static const String getMentor = '/getMentor';
 
   //community screen
 
   static const String community = '/community';
+  static const String introductionLevel = '/introductionLevel';
+  static const String founderBadge = '/founderBadge';
+  static const String dayOneBadge = '/dayOneBadge';
+  static const String courageBadge = '/courageBadge';
+  static const String reflectBadge = '/reflectBadge';
 
 
   //Home Dashboard
 
 static const String homeDashBoard='/homeDashBoard';
+static const String dashboard='/dashboard';
 
 //profile
 static const String profile='/profile';

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:joe_stumble/feature/auth/get_mentor.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class TermsAndConditionsScreen extends StatefulWidget {
   const TermsAndConditionsScreen({super.key});
@@ -118,7 +119,7 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
             CustomButton(
               text: "I agree",
               onPressed: () {
-                Get.to(GetMentor());
+                Get.toNamed(RouteName.getMentor);
               },
             ),
 

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:joe_stumble/feature/community/introduction_level.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class CommunityPickerScreen extends StatefulWidget {
   const CommunityPickerScreen({Key? key}) : super(key: key);
@@ -109,7 +110,7 @@ class _CommunityPickerScreenState extends State<CommunityPickerScreen> {
                 // Custom Button at the end
                CustomButton(text: 'Next', onPressed: () {
 
-                 Get.to(IntroductionLevelsScreen());
+                Get.toNamed(RouteName.introductionLevel);
 
 
                },)

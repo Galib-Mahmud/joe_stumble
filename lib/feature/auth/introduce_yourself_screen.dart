@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:joe_stumble/feature/auth/terms_and_condition_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class IntroduceYourselfScreen extends StatefulWidget {
   const IntroduceYourselfScreen({super.key});
@@ -86,7 +87,7 @@ class _IntroduceYourselfScreenState extends State<IntroduceYourselfScreen> {
             CustomButton(
               text: "Post",
               onPressed: () {
-               Get.to(TermsAndConditionsScreen());
+               Get.toNamed(RouteName.termsandcondition);
               },
             ),
 

@@ -6,6 +6,7 @@ import 'package:joe_stumble/feature/auth/reset_password_screen.dart';
 import 'package:joe_stumble/feature/community/community_picker_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class GetMentor extends StatefulWidget {
   const GetMentor({super.key});
@@ -80,7 +81,7 @@ class _GetMentorState extends State<GetMentor> {
 
                 CustomButton(text: "Get a Mentor", onPressed: () {
 
-                  Get.to(CommunityPickerScreen());
+               Get.toNamed(RouteName.community);
 
                 }),
 

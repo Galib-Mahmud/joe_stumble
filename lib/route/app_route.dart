@@ -4,14 +4,22 @@ import 'package:joe_stumble/feature/auth/birthday_screen.dart';
 import 'package:joe_stumble/feature/auth/find_tribe.dart';
 import 'package:joe_stumble/feature/auth/forgot_password_screen.dart';
 import 'package:joe_stumble/feature/auth/gender_screen.dart';
+import 'package:joe_stumble/feature/auth/get_mentor.dart';
 import 'package:joe_stumble/feature/auth/introduce_yourself_screen.dart';
 import 'package:joe_stumble/feature/auth/otp_screen.dart';
 import 'package:joe_stumble/feature/auth/reset_password_screen.dart';
 import 'package:joe_stumble/feature/auth/select_avatar_screen.dart';
 import 'package:joe_stumble/feature/auth/sign_in_screen.dart';
 import 'package:joe_stumble/feature/auth/sign_up_screen.dart';
+import 'package:joe_stumble/feature/auth/terms_and_condition_screen.dart';
 import 'package:joe_stumble/feature/auth/username_screen.dart';
 import 'package:joe_stumble/feature/community/community_picker_screen.dart';
+import 'package:joe_stumble/feature/community/courage_badge_screen.dart';
+import 'package:joe_stumble/feature/community/day_one_badge_screen.dart';
+import 'package:joe_stumble/feature/community/founder_badge_screen.dart';
+import 'package:joe_stumble/feature/community/introduction_level.dart';
+import 'package:joe_stumble/feature/community/reflection_badge_screen.dart';
+import 'package:joe_stumble/feature/home/dashboard_screen.dart';
 import 'package:joe_stumble/feature/home/home_dashboard_screen.dart';
 import 'package:joe_stumble/feature/home/profile_screen.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen1.dart';
@@ -128,9 +136,49 @@ class AppRoute {
       page: () => BirthdayScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.termsandcondition,
+      page: () => TermsAndConditionsScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ), GetPage(
+      name: RouteName.getMentor,
+      page: () => GetMentor(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
     ), GetPage(
       name: RouteName.community,
       page: () => CommunityPickerScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.introductionLevel,
+      page: () => IntroductionLevelsScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.founderBadge,
+      page: () => FoundersBadgeScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.dayOneBadge,
+      page: () => DayOneBadgeScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.courageBadge,
+      page: () => CourageBadgeScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.reflectBadge,
+      page: () => ReflectionBadgeScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.dashboard,
+      page: () => DashboardScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
     ),GetPage(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class ReflectionBadgeScreen extends StatelessWidget {
   @override
@@ -81,6 +83,9 @@ class ReflectionBadgeScreen extends StatelessWidget {
 
                 // Next Button with Linear Gradient
                 CustomButton(text: "Next", onPressed: () {
+
+                  Get.toNamed(RouteName.homeDashBoard);
+
 
 
                 },)

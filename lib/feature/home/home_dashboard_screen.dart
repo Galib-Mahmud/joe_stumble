@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/home/dashboard_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
+import 'package:joe_stumble/route/route_name.dart';
 import '../widget/home/custom_nav_bar.dart';
 
 class HomeDashboardScreen extends StatefulWidget {
@@ -95,8 +96,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
   Widget _buildButton(String label, IconData icon, String route) {
     return InkWell(
       onTap: () {
-        // Navigator.pushNamed(context, route); // ✅ Navigate to route
-        Get.to(DashboardScreen());
+       Get.toNamed(RouteName.dashboard);
       },
       borderRadius: BorderRadius.circular(12),
       child: Container(

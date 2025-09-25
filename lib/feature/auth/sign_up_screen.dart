@@ -64,7 +64,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
               CustomButton(text: "Sign Up", onPressed: () {
-               Get.toNamed(RouteName.birthday);
+               Get.toNamed(RouteName.username);
               }),
               SizedBox(height: 30.h),
 

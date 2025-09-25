@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:joe_stumble/feature/community/community_picker_screen.dart';
 import 'package:joe_stumble/feature/community/founder_badge_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class IntroductionLevelsScreen extends StatelessWidget {
   @override
@@ -96,7 +97,7 @@ class IntroductionLevelsScreen extends StatelessWidget {
                 // Next Button with Linear Gradient
                CustomButton(text: "Next", onPressed: () {
 
-                 Get.to(FoundersBadgeScreen());
+                 Get.toNamed(RouteName.founderBadge);
 
 
                },)
