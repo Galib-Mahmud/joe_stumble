@@ -35,7 +35,7 @@ class _IntroduceYourselfScreenState extends State<IntroduceYourselfScreen> {
             Text(
               "Introduce yourself",
               style: TextStyle(
-                fontSize: 30.sp,
+                fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
@@ -81,8 +81,7 @@ class _IntroduceYourselfScreenState extends State<IntroduceYourselfScreen> {
               textAlign: TextAlign.center,
             ),
 
-            const Spacer(),
-
+          SizedBox(height: 100.h),
             // Post Button
             CustomButton(
               text: "Post",

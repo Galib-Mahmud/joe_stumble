@@ -42,7 +42,7 @@ class _SelectAvatarState extends State<SelectAvatar> {
               Text(
                 "Select an avatar",
                 style: TextStyle(
-                  fontSize: 30.sp,
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),

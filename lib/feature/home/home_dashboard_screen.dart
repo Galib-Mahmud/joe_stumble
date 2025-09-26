@@ -25,25 +25,26 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Profile Section
-            Row(
+            Column(
               children: [
                 const CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage(
-                    'assets/images/profile_picture.png',
+                    'assets/images/avatar/avatar4.png',
                   ), // Replace with actual profile picture
                 ),
                 const SizedBox(width: 16),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text(
+                    Center(
+                      child:  Text(
 
-                      'Welcome Back',
-                      style: TextStyle(
-                        fontSize: 22,
-
-                        fontWeight: FontWeight.w600,
+                        'Welcome Back',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     Text(
@@ -56,34 +57,57 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
             ),
             const SizedBox(height: 40), // Space after profile section
             // Buttons (Tribe, Content Path, Journal, Support)
-            Wrap(
-              spacing: 16,
-              runSpacing: 16,
-              children: [
-                _buildButton('Tribe', Icons.group, '/tribe'),
-                _buildButton(
-                  'Content Path',
-                  Icons.arrow_forward,
-                  '/contentPath',
-                ),
-                _buildButton('Journal', Icons.book, '/journal'),
-                _buildButton('Support', Icons.help_outline, '/support'),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Wrap(
+                spacing: 20,
+                runSpacing: 20,
+                children: [
+                  _buildButton('Tribe', Icons.group, '/tribe'),
+                  _buildButton(
+                    'Content Path',
+                    Icons.arrow_forward,
+                    '/contentPath',
+                  ),
+                  _buildButton('Journal', Icons.book, '/journal'),
+                  _buildButton('Support', Icons.help_outline, '/support'),
+                ],
+              ),
             ),
             const SizedBox(height: 40), // Space before mood check-in section
             // Mood Check-in Section (Emojis)
-            const Text(
-              'Mood Check-in',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            ),
+
             const SizedBox(height: 12),
-            Row(
-              children: [
-                '😢',
-                '😞',
-                '🙂',
-                '😁',
-              ].map((emoji) => _buildMoodEmoji(emoji)).toList(),
+            Card(
+              shape: OutlineInputBorder(borderSide: BorderSide(color: Colors.orange ),borderRadius: BorderRadius.circular(10)
+
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10,bottom: 20),
+                child: Column(
+
+                  children: [
+
+                    Center(
+                      child: Text(
+                        'Mood Check-in',
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+                      children: [
+                        '😢',
+                        '😞',
+                        '🙂',
+                        '😁',
+                        '😁',
+                      ].map((emoji) => _buildMoodEmoji(emoji)).toList(),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -103,18 +127,18 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
         width: MediaQuery.of(context).size.width * 0.4, // responsive width
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: const Color(0xFFFB8C00), // Orange background color
+          color: Color.fromARGB(255, 246, 234, 229),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 40, color: Colors.white),
+            Icon(icon, size: 40, color: Colors.deepOrangeAccent),
             const SizedBox(height: 8),
             Text(
               label,
               style: const TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
               ),

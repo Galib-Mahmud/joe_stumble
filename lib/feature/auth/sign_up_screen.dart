@@ -107,13 +107,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 10.w),
+                  SizedBox(width: 8.w),
                   Expanded(
                     child: GestureDetector(
                       onTap: () {},
                       child: SizedBox(
                         height: 56.h,
-                        width: 100.w,
+                        width: 90.w,
 
                         child: Image.asset(
                           'assets/images/auth/apple.png',
@@ -156,7 +156,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
+              // Sign up text
               SizedBox(height: 20.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Already have an account? ',
+                    style: TextStyle(fontSize: 14.sp),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Get.toNamed(RouteName.signin);
+                    },
+                    child: Text(
+                      'Sign in',
+                      style: TextStyle(color: Colors.orange),
+                    ),
+                  ),
+                ],
+              ),
 
 
             ],

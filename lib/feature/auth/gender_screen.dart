@@ -56,7 +56,7 @@ class _GenderScreenState extends State<GenderScreen> {
                 Text(
                   "What’s your gender?",
                   style: TextStyle(
-                    fontSize: 30.sp,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
@@ -75,7 +75,7 @@ class _GenderScreenState extends State<GenderScreen> {
                 SizedBox(height: 120.h),
 
                 Text(
-                  "We’ll use this to match you with others of the same age",
+                  "This helps us create safe space for all our members",
                   style: TextStyle(
                     fontSize: 13.sp,
                     color: Colors.black,

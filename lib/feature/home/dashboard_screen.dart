@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:joe_stumble/feature/widget/home/custom_nav_bar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class DashboardScreen extends StatelessWidget {
   @override
@@ -20,16 +22,23 @@ class DashboardScreen extends StatelessWidget {
               ),
               child: Row(
                 children: [
+
                   Icon(Icons.format_quote, color: Colors.green),
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       '“Glowing skin is always in take care of it, and it will take care of you”',
                       style: TextStyle(fontSize: 14, fontStyle: FontStyle.italic),
+
                     ),
                   ),
                   SizedBox(width: 8),
                   Icon(Icons.arrow_forward_ios, color: Colors.green),
+                  TextButton(onPressed: () {
+
+                    Get.toNamed(RouteName.profile);
+
+                  }, child: Text("Next")),
                 ],
               ),
             ),
@@ -73,6 +82,7 @@ class DashboardScreen extends StatelessWidget {
                   ),
                   Divider(),
                   BotTile(
+
                     botName: 'Neel Hudson',
                     description: 'Warm, personal, and open-minded.',
                     time: '9:09 PM',
@@ -82,8 +92,13 @@ class DashboardScreen extends StatelessWidget {
               ),
             ),
           ],
+
+
         ),
+
+
       ),
+
     );
   }
 }

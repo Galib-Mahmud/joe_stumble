@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/home/my_journal_screen.dart';
-import 'package:joe_stumble/feature/widget/home/home_custom_appbar.dart';
+import 'package:joe_stumble/feature/widget/home/custom_appbar2.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import '../widget/home/custom_nav_bar.dart';
 
@@ -11,7 +11,7 @@ class NewJournal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HomeCustomAppBar(title: 'Your journals'),
+      // appBar: HomeCustomAppBar(title: 'Your journals'),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

@@ -27,10 +27,9 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 40,
-            ),
-            Row(mainAxisAlignment: MainAxisAlignment.center,
+            SizedBox(height: 20.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "Terms",
@@ -69,15 +68,17 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
               "By using this app you agree not to upload post or share content -",
               style: TextStyle(fontSize: 14.sp, color: Colors.black),
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 20.h),
             Text(
               "• Is obscene, abusive or otherwise objectionable",
               style: TextStyle(fontSize: 14.sp, color: Colors.black),
             ),
+            SizedBox(height: 20.h),
             Text(
               "• Is obscene, abusive or otherwise objectionable",
               style: TextStyle(fontSize: 14.sp, color: Colors.black),
             ),
+            SizedBox(height: 20.h),
             Text(
               "• Is obscene, abusive or otherwise objectionable",
               style: TextStyle(fontSize: 14.sp, color: Colors.black),
@@ -87,7 +88,7 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
             // Violators Section
             Row(
               children: [
-                Icon(Icons.cancel_outlined, color: Colors.red, size: 24.sp),
+                Icon(Icons.block, color: Colors.black, size: 24.sp),
                 SizedBox(width: 8.w),
                 Text(
                   "Violators",
@@ -99,7 +100,7 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 20.h),
             Text(
               "By using this app you agree not to upload post or share content",
               style: TextStyle(fontSize: 14.sp, color: Colors.black),
@@ -110,10 +111,21 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
               },
               child: Text(
                 "read more",
-                style: TextStyle(fontSize: 14.sp, color: Colors.blue),
+                style: TextStyle(fontSize: 14.sp, color: Colors.black),
               ),
             ),
             SizedBox(height: 20.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Keep our community safe",
+                  style: TextStyle(fontSize: 12.sp, color: Colors.grey),
+                ),
+
+              ],
+            ),
+            SizedBox(height: 30.h),
 
             // Agree Button
             CustomButton(

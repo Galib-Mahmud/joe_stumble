@@ -23,12 +23,25 @@ class IntroductionLevelsScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
+                Center(
+                  child: Text(
+                    'Introduction levels',
+                    style: TextStyle(
+                      fontSize: 24.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+
+                    ),
+                  ),
+                ),
                 // Image Section
                 Container(
                   height: 200.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.r),
                   ),
+
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20.r),
                     child: Image.asset(
@@ -39,13 +52,7 @@ class IntroductionLevelsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20.h), // Space after the image
                 // Title Section
-                Text(
-                  'Introduction levels',
-                  style: TextStyle(
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
+
                 SizedBox(height: 10.h),
                 // Feature List
                 Column(

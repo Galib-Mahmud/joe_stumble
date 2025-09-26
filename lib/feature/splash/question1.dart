@@ -52,7 +52,8 @@ class _Question1State extends State<Question1> {
             Text(
               'Where are you right now in your relationship journey?',
               style: TextStyle(
-                fontSize: 16.sp,
+                fontSize: 20.sp,
+                fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
@@ -69,8 +70,7 @@ class _Question1State extends State<Question1> {
               ],
             ),
 
-            // Next Button
-            Spacer(),
+            SizedBox(height: 100.h),
             CustomButton(
               text: 'Next',
               onPressed: () {

@@ -22,12 +22,14 @@ import 'package:joe_stumble/feature/community/reflection_badge_screen.dart';
 import 'package:joe_stumble/feature/home/dashboard_screen.dart';
 import 'package:joe_stumble/feature/home/home_dashboard_screen.dart';
 import 'package:joe_stumble/feature/home/profile_screen.dart';
+import 'package:joe_stumble/feature/home/tribe_chat_screen.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen1.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen3.dart';
 import 'package:joe_stumble/feature/splash/question1.dart';
 import 'package:joe_stumble/feature/splash/question2.dart';
 import 'package:joe_stumble/feature/splash/question3.dart';
 import 'package:joe_stumble/feature/splash/question4.dart';
+import 'package:joe_stumble/feature/splash/question5.dart';
 import 'package:joe_stumble/route/route_name.dart';
 
 import '../feature/splash/loading_splash_screen.dart';
@@ -122,6 +124,11 @@ class AppRoute {
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
     ),GetPage(
+      name: RouteName.question5,
+      page: () => Question5(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
       name: RouteName.selectAvatar,
       page: () => SelectAvatar(),
       transition: Transition.rightToLeft,
@@ -189,6 +196,16 @@ class AppRoute {
     ),GetPage(
       name: RouteName.profile,
       page: () => ProfileScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.tribute,
+      page: () => TribeChatScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.tribute,
+      page: () => TribeChatScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
     ),

@@ -57,7 +57,7 @@ class _GetMentorState extends State<GetMentor> {
                 Text(
                   "Get a Mentor",
                   style: TextStyle(
-                    fontSize: 30.sp,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),

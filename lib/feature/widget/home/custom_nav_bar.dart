@@ -40,7 +40,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
             break;
         }
       },
-      backgroundColor: Colors.orange,
+      backgroundColor: Colors.white,
       color: Colors.black,
       buttonBackgroundColor: Colors.black,
       items: <Widget>[
@@ -48,14 +48,14 @@ class _CustomNavBarState extends State<CustomNavBar> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             Icon(Icons.apps, size: 30, color: Colors.white),
-            Text('Orbit', style: TextStyle(color: Colors.white, fontSize: 12)),
+            Text('Orbit', style: TextStyle(color: Colors.white, fontSize: 16)),
           ],
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             Icon(Icons.book, size: 30, color: Colors.white),
-            Text('Journal', style: TextStyle(color: Colors.white, fontSize: 12)),
+            Text('Journal', style: TextStyle(color: Colors.white, fontSize: 16)),
           ],
         ),
         Container(
@@ -70,7 +70,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
               'SOS',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 22,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -80,7 +80,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             Icon(Icons.chat, size: 30, color: Colors.white),
-            Text('Chat', style: TextStyle(color: Colors.white, fontSize: 12)),
+            Text('Chat', style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold)),
           ],
         ),
         Column(

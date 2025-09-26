@@ -48,7 +48,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 height: 49.h,
                 isPassword: true,
               ),
-              SizedBox(height: 30.h),
+              SizedBox(height: 20.h),
 
               CustomTextField(
                 labelText: "Re-Type Password",

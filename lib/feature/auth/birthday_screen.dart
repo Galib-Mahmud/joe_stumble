@@ -44,7 +44,7 @@ class _BirthdayScreenState extends State<BirthdayScreen> {
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(height: 30.h),
+                SizedBox(height: 60.h),
 
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,

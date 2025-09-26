@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUtil
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/auth/select_avatar_screen.dart';
+import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/route/route_name.dart';
 import '../widget/splash/custom_button.dart'; // Import CustomButton widget
 
@@ -23,17 +24,7 @@ class _Question4State extends State<Question4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Image.asset(
-          'assets/images/splash/Stumble 2.png', // Path to your image
-          height: 30.h, // Adjust the size of the image if needed
-          width: 115.w,
-          fit: BoxFit.cover,
-        ),
-      ),
+      appBar:CustomAppBar(),
       body: Padding(
         padding: EdgeInsets.all(16.0.w),
         child: Column(
@@ -59,8 +50,9 @@ class _Question4State extends State<Question4> {
             Text(
               'How much do you feel that you are healing emotionally?',
               style: TextStyle(
-                fontSize: 16.sp,
+                fontSize: 20.sp,
                 color: Colors.black,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 20.h),
@@ -75,11 +67,10 @@ class _Question4State extends State<Question4> {
               ],
             ),
 
-            // Next Button
-            Spacer(),
+          SizedBox(height: 100.h),
            CustomButton(text: 'Next', onPressed: () {
 
-             Get.toNamed(RouteName.selectAvatar);
+             Get.toNamed(RouteName.question5);
 
            },)
           ],

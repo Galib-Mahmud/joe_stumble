@@ -27,7 +27,7 @@ class FoundersBadgeScreen extends StatelessWidget {
                   'Founders badge',
                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 24.sp,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.black
                   ),
@@ -42,8 +42,8 @@ class FoundersBadgeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         BadgeItem(badgeText: '1 reply', points: '50 points', unlocked: true),
-                        BadgeItem(badgeText: '3 replies', points: '50 points', unlocked: true),
-                        BadgeItem(badgeText: '5 replies', points: '50 points', unlocked: true),
+                        BadgeItem(badgeText: '3 replies', points: '50 points', unlocked: false),
+                        BadgeItem(badgeText: '5 replies', points: '50 points', unlocked: false),
                       ],
                     ),
                     SizedBox(height: 20.h),

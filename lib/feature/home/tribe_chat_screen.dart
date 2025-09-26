@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/home/journal_screen.dart';
+import 'package:joe_stumble/feature/home/my_journal_screen.dart';
 
 class TribeChatScreen extends StatefulWidget {
   @override
@@ -24,37 +25,38 @@ class _TribeChatScreenState extends State<TribeChatScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(centerTitle: true,
-
-          title: Text("Tribe chat room"),
-          backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text(
+            'Tribe Chat room\nActive: ',
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+          ),
+          backgroundColor: Colors.white,
           elevation: 0,
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/avatar.png'), // Add your avatar image here
+          automaticallyImplyLeading: false, // prevent default back arrow
+          leading: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.black, // ✅ Back button background color
+                shape: BoxShape.circle, // circular background
               ),
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back, color: Colors.white), // arrow color
+                onPressed: () {
+                  Navigator.pop(context); // go back
+                },
+              ),
+            ),
+          ),
+          actions: const [
+            Padding(
+              padding: EdgeInsets.only(right: 16.0),
+              child: Icon(Icons.arrow_circle_right_outlined, color: Colors.black),
             ),
           ],
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(40.0),
-            child: Container(
-              padding: EdgeInsets.only(bottom: 8.0),
-              alignment: Alignment.center,
-              child: Text(
-                '4922 Online',
-                style: TextStyle(color: Colors.green),
-              ),
-            ),
-          ),
         ),
+
         body: Stack(
           children: [
             // Background

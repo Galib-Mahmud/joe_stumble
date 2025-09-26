@@ -39,7 +39,7 @@ class _UserNameState extends State<UserName> {
                 Text(
                   "Choose your name",
                   style: TextStyle(
-                    fontSize: 30.sp,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),

@@ -27,7 +27,7 @@ class CourageBadgeScreen extends StatelessWidget {
                   'Courage  Badge',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 24.sp,
+                      fontSize: 22.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.black
                   ),

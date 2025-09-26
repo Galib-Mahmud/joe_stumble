@@ -1,19 +1,18 @@
-// lib/screens/question3.dart
+// lib/screens/question4.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUtil
 import 'package:get/get.dart';
-import 'package:joe_stumble/feature/splash/onboarding_screen3.dart';
-import 'package:joe_stumble/feature/splash/question4.dart';
+import 'package:joe_stumble/feature/auth/select_avatar_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/route/route_name.dart';
 import '../widget/splash/custom_button.dart'; // Import CustomButton widget
 
-class Question3 extends StatefulWidget {
+class Question5 extends StatefulWidget {
   @override
-  _Question3State createState() => _Question3State();
+  _Question5State createState() => _Question5State();
 }
 
-class _Question3State extends State<Question3> {
+class _Question5State extends State<Question5> {
   String? _selectedOption;
 
   void _handleRadioValueChange(String? value) {
@@ -31,16 +30,16 @@ class _Question3State extends State<Question3> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Progress Bar (60% completion for Question 3/5)
+            // Progress Bar (80% completion for Question 4/5)
             LinearProgressIndicator(
-              value: 0.6, // Represents progress (question 3/5)
+              value: 0.8, // Represents progress (question 4/5)
               backgroundColor: Colors.grey[200],
               valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
             ),
             SizedBox(height: 20.h),
             // Question Text
             Text(
-              'Question 3/5',
+              'Question 5/5',
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
@@ -49,7 +48,7 @@ class _Question3State extends State<Question3> {
             ),
             SizedBox(height: 10.h),
             Text(
-              'Which phrase feels closest to your situation right now?',
+              'What best describes the tone of your experience?',
               style: TextStyle(
                 fontSize: 20.sp,
                 color: Colors.black,
@@ -61,20 +60,20 @@ class _Question3State extends State<Question3> {
             // Radio Buttons (Options)
             Column(
               children: [
-                _buildRadioOption('Love limbo/half in, half out'),
-                _buildRadioOption('Paperwork still warm 📄🔥'),
-                _buildRadioOption('Ross & Rachel energy 💔➡️❤️➡️💔'),
-                _buildRadioOption('Six months on, still stuck'),
-                _buildRadioOption('Trying to rebuild trust'),
+                _buildRadioOption('First heartbreak / brand new to this'),
+                _buildRadioOption('Lingering pain (months or years later)'),
+                _buildRadioOption('Betrayal or broken trust'),
+                _buildRadioOption('Family in transition (kids involved)'),
+                _buildRadioOption('Needing freedom, but not there yet'),
               ],
             ),
 
-          SizedBox(height: 100.h),
-         CustomButton(text: "Next", onPressed: () {
+            SizedBox(height: 100.h),
+            CustomButton(text: 'Next', onPressed: () {
 
-           Get.toNamed(RouteName.question4);
+              Get.toNamed(RouteName.selectAvatar);
 
-         },)
+            },)
           ],
         ),
       ),

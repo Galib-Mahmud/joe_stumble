@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:joe_stumble/feature/home/tribe_chat_screen.dart';
+import 'package:joe_stumble/feature/widget/home/custom_appbar2.dart';
 import 'package:joe_stumble/feature/widget/home/custom_nav_bar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
+import 'package:joe_stumble/route/route_name.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -21,19 +23,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile'),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 16.0),
-            child: Icon(Icons.settings, color: Colors.black),
-          ),
-        ],
-      ),
-      body: Padding(
+      appBar: CustomAppBar2(
+      title: "Profile",
+        actionIcon: Icons.format_line_spacing,
+      onAction: () {
+
+      },
+    ),
+
+
+    body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +41,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Center(
               child: CircleAvatar(
                 radius: 40,
-                backgroundImage: AssetImage('assets/profile_image.png'), // Change this to your image asset
+                backgroundImage: AssetImage('assets/images/avatar/avatar4.png'), // Change this to your image asset
               ),
             ),
             SizedBox(height: 8),
@@ -74,7 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
             // Edit Button
               CustomButton(text: "Edit", onPressed: () {
-                Get.to(TribeChatScreen());
+               Get.toNamed(RouteName.tribute);
 
               },),
           ],

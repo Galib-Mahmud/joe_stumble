@@ -34,7 +34,7 @@ class _FindYourTribeScreenState extends State<FindYourTribeScreen> {
                 Text(
                   "Find Your Tribe",
                   style: TextStyle(
-                    fontSize: 30.sp,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
