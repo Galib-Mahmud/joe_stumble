@@ -43,5 +43,13 @@ static const String dashboard='/dashboard';
 //profile
 static const String profile='/profile';
 static const String tribute='/tribute';
+static const String yourJurnal='/yourJurnal';
+static const String myJurnal='/myJurnal';
+static const String depressedRiyaj='/depressedRiyaj';
+static const String myJurnal1='/myJurnal1';
+static const String orbit='/orbit';
+static const String mySavedPost='/mySavedPost';
+static const String myVedio='/myVedio';
+static const String termsOfUse='/termsOfUse';
 
 }

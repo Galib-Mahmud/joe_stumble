@@ -20,9 +20,17 @@ import 'package:joe_stumble/feature/community/founder_badge_screen.dart';
 import 'package:joe_stumble/feature/community/introduction_level.dart';
 import 'package:joe_stumble/feature/community/reflection_badge_screen.dart';
 import 'package:joe_stumble/feature/home/dashboard_screen.dart';
+import 'package:joe_stumble/feature/home/depressed_riyaj_screen.dart';
 import 'package:joe_stumble/feature/home/home_dashboard_screen.dart';
+import 'package:joe_stumble/feature/home/my_journal_screen.dart';
 import 'package:joe_stumble/feature/home/profile_screen.dart';
 import 'package:joe_stumble/feature/home/tribe_chat_screen.dart';
+import 'package:joe_stumble/feature/home/your_journal_screen.dart';
+import 'package:joe_stumble/feature/journal/my_jurnal_screen1.dart';
+import 'package:joe_stumble/feature/journal/my_saved_post.dart';
+import 'package:joe_stumble/feature/journal/my_vedio.dart';
+import 'package:joe_stumble/feature/journal/orbit_screen.dart';
+import 'package:joe_stumble/feature/journal/terms_of_use.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen1.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen3.dart';
 import 'package:joe_stumble/feature/splash/question1.dart';
@@ -204,8 +212,43 @@ class AppRoute {
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
     ),GetPage(
-      name: RouteName.tribute,
-      page: () => TribeChatScreen(),
+      name: RouteName.yourJurnal,
+      page: () => YourJurnalScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.myJurnal,
+      page: () => MyJournalScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.depressedRiyaj,
+      page: () => DepressedScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.myJurnal1,
+      page: () => MyJournalsScreen1(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.orbit,
+      page: () => OrbitScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.mySavedPost,
+      page: () => MySavedPostsScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.myVedio,
+      page: () => MyVideosScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.termsOfUse,
+      page: () => TermsOfUseScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
     ),

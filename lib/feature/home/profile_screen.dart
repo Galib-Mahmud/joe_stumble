@@ -4,7 +4,6 @@ import 'package:joe_stumble/feature/home/tribe_chat_screen.dart';
 import 'package:joe_stumble/feature/widget/home/custom_appbar2.dart';
 import 'package:joe_stumble/feature/widget/home/custom_nav_bar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
-import 'package:joe_stumble/route/route_name.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -12,6 +11,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
@@ -23,16 +23,107 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: CustomAppBar2(
-      title: "Profile",
-        actionIcon: Icons.format_line_spacing,
-      onAction: () {
+        title: "Profile",
+        actionIcon: Icons.menu,
+        onAction: () {
+          _scaffoldKey.currentState?.openDrawer();
+        },
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            Container(
 
-      },
-    ),
-
-
-    body: Padding(
+              child: DrawerHeader(
+                decoration: const BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start, // Align items to the top
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'assets/images/splash/Stumble 2.png',
+                          height: 20,
+                          fit: BoxFit.contain, // Ensure image fits within height
+                        ),
+                        Image.asset(
+                          'assets/images/avatar/avatar4.png',
+                          height: 40,
+                          fit: BoxFit.contain, // Ensure image fits within height
+                        ),
+                        const SizedBox(height: 8),
+                        const Text(
+                          'Daniel Jones',
+                          style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.bold),
+                        ),
+                        const Text(
+                          'Founder Badges',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.close, color: Colors.white),
+                      onPressed: () {
+                        Navigator.pop(context); // Close the drawer
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 30),
+            ListTile(
+              leading: const Icon(Icons.account_circle),
+              title: const Text('My Account'),
+              onTap: () {
+                Navigator.pop(context); // Close drawer
+                // Add navigation logic here if needed
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.video_library),
+              title: const Text('My Videos'),
+              onTap: () {
+                Navigator.pop(context); // Close drawer
+                // Add navigation logic here if needed
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.dashboard),
+              title: const Text('Dashboard'),
+              onTap: () {
+                Navigator.pop(context); // Close drawer
+                // Add navigation logic here if needed
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Settings'),
+              onTap: () {
+                Navigator.pop(context); // Close drawer
+                // Add navigation logic here if needed
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('Log Out'),
+              onTap: () {
+                Navigator.pop(context); // Close drawer
+                // Add logout logic here if needed
+              },
+            ),
+          ],
+        ),
+      ),
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,23 +132,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Center(
               child: CircleAvatar(
                 radius: 40,
-                backgroundImage: AssetImage('assets/images/avatar/avatar4.png'), // Change this to your image asset
+                backgroundImage: const AssetImage('assets/images/avatar/avatar4.png'),
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Center(
-              child: Text(
+              child: const Text(
                 'Itunuoluwa Abidoye',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
             Center(
-              child: Text(
+              child: const Text(
                 'Advanced User',
                 style: TextStyle(color: Colors.grey),
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
 
             // Editable Fields
             _buildTextField('User Name', _usernameController, 'Your User Name'),
@@ -69,13 +160,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
             _buildDropdown('Gender', _gender, ['Select', 'Male', 'Female', 'Other']),
             _buildDropdown('Age Range', _ageRange, ['Select', '18-25', '26-35', '36-45', '46-60', '60+']),
 
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
 
             // Edit Button
-              CustomButton(text: "Edit", onPressed: () {
-               Get.toNamed(RouteName.tribute);
-
-              },),
+            CustomButton(
+              text: "Edit",
+              onPressed: () {
+                Get.to(TribeChatScreen());
+              },
+            ),
           ],
         ),
       ),
@@ -109,7 +202,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         value: value,
         onChanged: (newValue) {
           setState(() {
-            value = newValue;
+            if (label == 'Gender') _gender = newValue;
+            if (label == 'Age Range') _ageRange = newValue;
           });
         },
         decoration: InputDecoration(

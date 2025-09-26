@@ -13,7 +13,7 @@ class HomeDashboardScreen extends StatefulWidget {
 }
 
 class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
-  final String userName = "Galib"; // Replace with dynamic name from backend
+  final String userName = "Galib Mahmud"; // Replace with dynamic name from backend
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                 const CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage(
-                    'assets/images/avatar/avatar4.png',
+                    'assets/images/home/avatar.jpg',
                   ), // Replace with actual profile picture
                 ),
                 const SizedBox(width: 16),
@@ -58,23 +58,20 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
             const SizedBox(height: 40), // Space after profile section
             // Buttons (Tribe, Content Path, Journal, Support)
             Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(30.0),
               child: Wrap(
                 spacing: 20,
                 runSpacing: 20,
                 children: [
-                  _buildButton('Tribe', Icons.group, '/tribe'),
-                  _buildButton(
-                    'Content Path',
-                    Icons.arrow_forward,
-                    '/contentPath',
-                  ),
-                  _buildButton('Journal', Icons.book, '/journal'),
-                  _buildButton('Support', Icons.help_outline, '/support'),
+                  _buildButtonWithImage('Tribe', 'assets/images/home/pic1.png', '/tribe'),
+                  _buildButtonWithImage('Content Path', 'assets/images/home/pic2.png', '/contentPath'),
+                  _buildButtonWithImage('Journal', 'assets/images/home/pic3.png', '/journal'),
+                  _buildButtonWithImage('Support', 'assets/images/home/pic4.png', '/support'),
                 ],
               ),
             ),
-            const SizedBox(height: 40), // Space before mood check-in section
+
+            const SizedBox(height: 20), // Space before mood check-in section
             // Mood Check-in Section (Emojis)
 
             const SizedBox(height: 12),
@@ -111,43 +108,51 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
             ),
           ],
         ),
+
       ),
+
       bottomNavigationBar: CustomNavBar(), // Custom navigation bar
     );
   }
 
-  // Utility method to create a button with ripple effect
-  Widget _buildButton(String label, IconData icon, String route) {
-    return InkWell(
+  Widget _buildButtonWithImage(String label, String imagePath, String route) {
+    return GestureDetector(
       onTap: () {
-       Get.toNamed(RouteName.dashboard);
+        Get.toNamed(RouteName.dashboard);
+
       },
-      borderRadius: BorderRadius.circular(12),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.4, // responsive width
-        padding: const EdgeInsets.all(16),
+        width: 164,
+        height: 118,
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 246, 234, 229),
-          borderRadius: BorderRadius.circular(12),
+          color: const Color.fromRGBO(255, 248, 239, 1), // ✅ fixed
+          borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 40, color: Colors.deepOrangeAccent),
-            const SizedBox(height: 8),
+            Image.asset(
+              imagePath,
+              width: 40,
+              height: 40,
+              fit: BoxFit.contain,
+            ),
+            const SizedBox(height: 10),
             Text(
               label,
               style: const TextStyle(
-                color: Colors.black,
+                color: Colors.black, // ✅ visible on light background
+                fontSize: 14,
                 fontWeight: FontWeight.w600,
-                fontSize: 16,
               ),
             ),
           ],
         ),
       ),
+
     );
   }
+
 
   // Utility method to create mood emojis with tap interaction
   Widget _buildMoodEmoji(String emoji) {
