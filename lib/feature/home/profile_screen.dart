@@ -26,10 +26,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
       key: _scaffoldKey,
       appBar: CustomAppBar2(
         title: "Profile",
-        actionIcon: Icons.menu,
-        onAction: () {
-          _scaffoldKey.currentState?.openDrawer();
-        },
+        actionIcon:"assets/images/avatar/menu.png",onAction: () {
+
+      },
+
       ),
       drawer: Drawer(
         child: ListView(

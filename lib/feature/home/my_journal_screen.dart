@@ -74,7 +74,7 @@ class MyJournalScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const CustomNavBar(),
+      bottomNavigationBar: CustomNavBar(),
     );
   }
 

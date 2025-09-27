@@ -4,15 +4,16 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final VoidCallback? onBack;
   final Color backButtonColor;
-  final IconData? actionIcon;
+
+  final String? actionIcon; // ✅ image asset path
   final VoidCallback? onAction;
 
   const CustomAppBar2({
     super.key,
     required this.title,
     this.onBack,
-    this.backButtonColor = Colors.black, // default back button background
-    required this.actionIcon,
+    this.backButtonColor = Colors.black,
+    this.actionIcon,
     this.onAction,
   });
 
@@ -29,12 +30,13 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
       ),
       backgroundColor: Colors.white,
       elevation: 0,
-      automaticallyImplyLeading: false, // disable default back arrow
-      leading: Padding(
+      automaticallyImplyLeading: false,
+      leading: onBack != null
+          ? Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
           decoration: BoxDecoration(
-            color: backButtonColor, // ✅ customizable back button color
+            color: backButtonColor,
             shape: BoxShape.circle,
           ),
           child: IconButton(
@@ -42,14 +44,20 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
             onPressed: onBack ?? () => Navigator.pop(context),
           ),
         ),
-      ),
+      )
+          : null,
       actions: [
         if (actionIcon != null)
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: GestureDetector(
               onTap: onAction,
-              child: Icon(actionIcon, color: Colors.black),
+              child: Image.asset(
+                actionIcon!, // ✅ load asset image
+                height: 24,
+                width: 24,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
       ],

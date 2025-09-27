@@ -14,9 +14,13 @@ class _MyJournalsScreen1State extends State<MyJournalsScreen1> {
     return Scaffold(
       appBar: CustomAppBar2(
         title: "My Journals",
-        onBack: () => Navigator.pop(context), // Back button functionality
+        onBack: () {
+          Navigator.pop(context);
+        }, // Back button functionality
         backButtonColor: Colors.black,
-        actionIcon: Icons.menu, // Menu icon as in screenshot
+        actionIcon: "assets/images/avatar/menu.png",onAction: () {
+
+        }, // Menu icon as in screenshot
       ),
       body: Container(
         decoration: BoxDecoration(

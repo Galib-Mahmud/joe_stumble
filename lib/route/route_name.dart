@@ -51,5 +51,10 @@ static const String orbit='/orbit';
 static const String mySavedPost='/mySavedPost';
 static const String myVedio='/myVedio';
 static const String termsOfUse='/termsOfUse';
+static const String privacy='/privacy';
+static const String dataRetension='/dataRetension';
+static const String supportScreen='/supportScreen';
+static const String setYourPin='/setYourPin';
+static const String exBlock='/exBlock';
 
 }

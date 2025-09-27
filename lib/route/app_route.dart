@@ -26,10 +26,15 @@ import 'package:joe_stumble/feature/home/my_journal_screen.dart';
 import 'package:joe_stumble/feature/home/profile_screen.dart';
 import 'package:joe_stumble/feature/home/tribe_chat_screen.dart';
 import 'package:joe_stumble/feature/home/your_journal_screen.dart';
+import 'package:joe_stumble/feature/journal/data_retension_screen.dart';
+import 'package:joe_stumble/feature/journal/ex_block_screen.dart';
 import 'package:joe_stumble/feature/journal/my_jurnal_screen1.dart';
 import 'package:joe_stumble/feature/journal/my_saved_post.dart';
 import 'package:joe_stumble/feature/journal/my_vedio.dart';
 import 'package:joe_stumble/feature/journal/orbit_screen.dart';
+import 'package:joe_stumble/feature/journal/privacy_policy_screen.dart';
+import 'package:joe_stumble/feature/journal/set_your_pin_screen.dart';
+import 'package:joe_stumble/feature/journal/support_screen.dart';
 import 'package:joe_stumble/feature/journal/terms_of_use.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen1.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen3.dart';
@@ -249,6 +254,31 @@ class AppRoute {
     ),GetPage(
       name: RouteName.termsOfUse,
       page: () => TermsOfUseScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.privacy,
+      page: () => PrivacyPolicyScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.dataRetension,
+      page: () => DataRetentionDeletionPolicyScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.supportScreen,
+      page: () => SupportScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.setYourPin,
+      page: () => SetYourPinScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.exBlock,
+      page: () => ExBlockScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
     ),

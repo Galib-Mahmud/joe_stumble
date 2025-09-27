@@ -11,11 +11,16 @@ class YourJurnalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar2(title: "Your Jurnals", actionIcon: Icons.menu),
+      appBar: CustomAppBar2(
+        title: "Your Jurnals",
+        actionIcon: "assets/images/avatar/menu.png",
+        onAction: () {},
+      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/home/Jurnal.png"), // background image
+            image: AssetImage("assets/images/home/Jurnal.png"),
+            // background image
             fit: BoxFit.cover,
           ),
         ),
@@ -64,16 +69,17 @@ class YourJurnalScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title,
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w600)),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
                 const SizedBox(height: 4),
                 Text(
                   message,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Colors.black54,
-                  ),
+                  style: const TextStyle(fontSize: 14, color: Colors.black54),
                   overflow: TextOverflow.ellipsis,
                 ),
               ],
@@ -83,10 +89,7 @@ class YourJurnalScreen extends StatelessWidget {
           // Right side (time)
           Text(
             time,
-            style: const TextStyle(
-              fontSize: 12,
-              color: Colors.black54,
-            ),
+            style: const TextStyle(fontSize: 12, color: Colors.black54),
           ),
         ],
       ),

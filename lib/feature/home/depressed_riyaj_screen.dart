@@ -18,7 +18,9 @@ class _DepressedScreenState extends State<DepressedScreen> {
         title: "Depressed Riyaz\nActive",
         onBack: () => Navigator.pop(context), // Back button functionality
         backButtonColor: Colors.black,
-        actionIcon: Icons.chat,
+        actionIcon:"assets/images/avatar/dot.png",onAction: () {
+
+      },
       ),
       body: Container(
         decoration: BoxDecoration(

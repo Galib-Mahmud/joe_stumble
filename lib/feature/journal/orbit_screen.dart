@@ -14,9 +14,13 @@ class _OrbitScreenState extends State<OrbitScreen> {
     return Scaffold(
       appBar: CustomAppBar2(
         title: "Orbit",
-        onBack: () => Navigator.pop(context),
+        onBack: () {
+          Navigator.pop(context);
+        },
         backButtonColor: Colors.black,
-        actionIcon: Icons.star, // Star icon as in screenshot
+        actionIcon: "assets/images/avatar/star.png",onAction: () {
+
+      },  // Star icon as in screenshot
       ),
       body: Container(
         decoration: BoxDecoration(

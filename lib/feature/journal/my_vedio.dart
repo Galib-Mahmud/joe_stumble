@@ -14,9 +14,13 @@ class _MyVideosScreenState extends State<MyVideosScreen> {
     return Scaffold(
       appBar: CustomAppBar2(
         title: "My Videos",
-        onBack: () => Navigator.pop(context),
+        onBack: () {
+          Navigator.pop(context);
+        },
         backButtonColor: Colors.black,
-        actionIcon: Icons.menu, // Menu icon as in screenshot
+        actionIcon: "assets/images/avatar/menu.png",onAction: () {
+
+        }, // Menu icon as in screenshot
       ),
       body: ListView(
         padding: EdgeInsets.all(16.0),
