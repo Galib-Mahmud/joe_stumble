@@ -56,5 +56,6 @@ static const String dataRetension='/dataRetension';
 static const String supportScreen='/supportScreen';
 static const String setYourPin='/setYourPin';
 static const String exBlock='/exBlock';
+static const String exBlockCard='/exBlockCard';
 
 }

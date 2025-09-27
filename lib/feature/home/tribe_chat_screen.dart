@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widget/home/custom_nav_bar.dart';
+
 class TribeChatScreen extends StatefulWidget {
   const TribeChatScreen({super.key});
 
@@ -90,6 +92,7 @@ class _TribeChatScreenState extends State<TribeChatScreen> {
         ),
       ],
     ),
+      bottomNavigationBar: CustomNavBar(),
 
       body: Stack(
         children: [

@@ -27,6 +27,7 @@ import 'package:joe_stumble/feature/home/profile_screen.dart';
 import 'package:joe_stumble/feature/home/tribe_chat_screen.dart';
 import 'package:joe_stumble/feature/home/your_journal_screen.dart';
 import 'package:joe_stumble/feature/journal/data_retension_screen.dart';
+import 'package:joe_stumble/feature/journal/ex_block_card.dart';
 import 'package:joe_stumble/feature/journal/ex_block_screen.dart';
 import 'package:joe_stumble/feature/journal/my_jurnal_screen1.dart';
 import 'package:joe_stumble/feature/journal/my_saved_post.dart';
@@ -279,6 +280,11 @@ class AppRoute {
     ),GetPage(
       name: RouteName.exBlock,
       page: () => ExBlockScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.exBlockCard,
+      page: () => ExBlockCard(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
     ),

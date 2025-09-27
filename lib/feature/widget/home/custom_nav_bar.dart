@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:get/get.dart';
+import 'package:joe_stumble/feature/home/tribe_chat_screen.dart';
+import 'package:joe_stumble/route/route_name.dart';
+
+import '../../home/app_navigation.dart';
+import '../../home/dashboard_screen.dart';
+import '../../home/home_dashboard_screen.dart';
+import '../../home/my_journal_screen.dart';
+import '../../journal/orbit_screen.dart';
 
 class CustomNavBar extends StatefulWidget {
   const CustomNavBar({super.key});
@@ -24,19 +33,24 @@ class _CustomNavBarState extends State<CustomNavBar> {
         // Example: handle navigation
         switch (index) {
           case 0:
-            debugPrint("Orbit tapped");
+            // Get.toNamed(RouteName.homeDashBoard);
+            AppNavigation.push(context, HomeDashboardScreen());
             break;
           case 1:
-            debugPrint("Journal tapped");
+          // Get.toNamed(RouteName.myJurnal);
+          AppNavigation.push(context, MyJournalScreen());
             break;
           case 2:
-            debugPrint("SOS tapped");
+           // Get.toNamed(RouteName.orbit);
+           AppNavigation.push(context, OrbitScreen());
             break;
           case 3:
-            debugPrint("Chat tapped");
+         // Get.toNamed(RouteName.tribute);
+         AppNavigation.push(context,TribeChatScreen());
             break;
           case 4:
-            debugPrint("Dashboard tapped");
+         // Get.toNamed(RouteName.dashboard);
+         AppNavigation.push(context,DashboardScreen());
             break;
         }
       },
