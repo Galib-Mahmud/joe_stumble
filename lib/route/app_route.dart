@@ -46,6 +46,7 @@ import 'package:joe_stumble/feature/splash/question4.dart';
 import 'package:joe_stumble/feature/splash/question5.dart';
 import 'package:joe_stumble/route/route_name.dart';
 
+import '../feature/home/test_home_page.dart';
 import '../feature/splash/loading_splash_screen.dart';
 import '../feature/splash/onboarding_screen2.dart';
 
@@ -202,12 +203,21 @@ class AppRoute {
       page: () => DashboardScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
-    ),GetPage(
+    ),
+    GetPage(
       name: RouteName.homeDashBoard,
       page: () => HomeDashboardScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
-    ),GetPage(
+    ),
+    GetPage(
+      name: RouteName.testDashBoard,
+      page: () => TestHomeScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),
+
+    GetPage(
       name: RouteName.profile,
       page: () => ProfileScreen(),
       transition: Transition.rightToLeft,

@@ -38,6 +38,7 @@ class RouteName{
   //Home Dashboard
 
 static const String homeDashBoard='/homeDashBoard';
+static const String testDashBoard='/testDashBoard';
 static const String dashboard='/dashboard';
 
 //profile

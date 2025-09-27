@@ -56,7 +56,6 @@ class _OrbitScreenState extends State<OrbitScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: CustomNavBar(),
     );
   }
 

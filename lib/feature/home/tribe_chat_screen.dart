@@ -92,7 +92,6 @@ class _TribeChatScreenState extends State<TribeChatScreen> {
         ),
       ],
     ),
-      bottomNavigationBar: CustomNavBar(),
 
       body: Stack(
         children: [
