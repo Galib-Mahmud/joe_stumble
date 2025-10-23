@@ -31,98 +31,98 @@ class _ProfileScreenState extends State<ProfileScreen> {
       },
 
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            Container(
-
-              child: DrawerHeader(
-                decoration: const BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start, // Align items to the top
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          'assets/images/splash/Stumble 2.png',
-                          height: 20,
-                          fit: BoxFit.contain, // Ensure image fits within height
-                        ),
-                        Image.asset(
-                          'assets/images/avatar/avatar4.png',
-                          height: 40,
-                          fit: BoxFit.contain, // Ensure image fits within height
-                        ),
-                        const SizedBox(height: 8),
-                        const Text(
-                          'Daniel Jones',
-                          style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.bold),
-                        ),
-                        const Text(
-                          'Founder Badges',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.close, color: Colors.white),
-                      onPressed: () {
-                        Navigator.pop(context); // Close the drawer
-                      },
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(height: 30),
-            ListTile(
-              leading: const Icon(Icons.account_circle),
-              title: const Text('My Account'),
-              onTap: () {
-                Navigator.pop(context); // Close drawer
-                // Add navigation logic here if needed
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.video_library),
-              title: const Text('My Videos'),
-              onTap: () {
-                Navigator.pop(context); // Close drawer
-                // Add navigation logic here if needed
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.dashboard),
-              title: const Text('Dashboard'),
-              onTap: () {
-                Navigator.pop(context); // Close drawer
-                // Add navigation logic here if needed
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-              onTap: () {
-                Navigator.pop(context); // Close drawer
-                // Add navigation logic here if needed
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.logout),
-              title: const Text('Log Out'),
-              onTap: () {
-                Navigator.pop(context); // Close drawer
-                // Add logout logic here if needed
-              },
-            ),
-          ],
-        ),
-      ),
+      // drawer: Drawer(
+      //   child: ListView(
+      //     padding: EdgeInsets.zero,
+      //     children: [
+      //       Container(
+      //
+      //         child: DrawerHeader(
+      //           decoration: const BoxDecoration(
+      //             color: Colors.blue,
+      //           ),
+      //           child: Row(
+      //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //             crossAxisAlignment: CrossAxisAlignment.start, // Align items to the top
+      //             children: [
+      //               Column(
+      //                 crossAxisAlignment: CrossAxisAlignment.start,
+      //                 children: [
+      //                   Image.asset(
+      //                     'assets/images/splash/Stumble 2.png',
+      //                     height: 20,
+      //                     fit: BoxFit.contain, // Ensure image fits within height
+      //                   ),
+      //                   Image.asset(
+      //                     'assets/images/avatar/avatar4.png',
+      //                     height: 40,
+      //                     fit: BoxFit.contain, // Ensure image fits within height
+      //                   ),
+      //                   const SizedBox(height: 8),
+      //                   const Text(
+      //                     'Daniel Jones',
+      //                     style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.bold),
+      //                   ),
+      //                   const Text(
+      //                     'Founder Badges',
+      //                     style: TextStyle(color: Colors.white),
+      //                   ),
+      //                 ],
+      //               ),
+      //               IconButton(
+      //                 icon: const Icon(Icons.close, color: Colors.white),
+      //                 onPressed: () {
+      //                   Navigator.pop(context); // Close the drawer
+      //                 },
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //       SizedBox(height: 30),
+      //       ListTile(
+      //         leading: const Icon(Icons.account_circle),
+      //         title: const Text('My Account'),
+      //         onTap: () {
+      //           Navigator.pop(context); // Close drawer
+      //           // Add navigation logic here if needed
+      //         },
+      //       ),
+      //       ListTile(
+      //         leading: const Icon(Icons.video_library),
+      //         title: const Text('My Videos'),
+      //         onTap: () {
+      //           Navigator.pop(context); // Close drawer
+      //           // Add navigation logic here if needed
+      //         },
+      //       ),
+      //       ListTile(
+      //         leading: const Icon(Icons.dashboard),
+      //         title: const Text('Dashboard'),
+      //         onTap: () {
+      //           Navigator.pop(context); // Close drawer
+      //           // Add navigation logic here if needed
+      //         },
+      //       ),
+      //       ListTile(
+      //         leading: const Icon(Icons.settings),
+      //         title: const Text('Settings'),
+      //         onTap: () {
+      //           Navigator.pop(context); // Close drawer
+      //           // Add navigation logic here if needed
+      //         },
+      //       ),
+      //       ListTile(
+      //         leading: const Icon(Icons.logout),
+      //         title: const Text('Log Out'),
+      //         onTap: () {
+      //           Navigator.pop(context); // Close drawer
+      //           // Add logout logic here if needed
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

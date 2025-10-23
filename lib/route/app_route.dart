@@ -35,6 +35,7 @@ import 'package:joe_stumble/feature/journal/my_vedio.dart';
 import 'package:joe_stumble/feature/journal/orbit_screen.dart';
 import 'package:joe_stumble/feature/journal/privacy_policy_screen.dart';
 import 'package:joe_stumble/feature/journal/set_your_pin_screen.dart';
+import 'package:joe_stumble/feature/journal/settings_screen.dart';
 import 'package:joe_stumble/feature/journal/support_screen.dart';
 import 'package:joe_stumble/feature/journal/terms_of_use.dart';
 import 'package:joe_stumble/feature/splash/onboarding_screen1.dart';
@@ -270,6 +271,11 @@ class AppRoute {
     ),GetPage(
       name: RouteName.privacy,
       page: () => PrivacyPolicyScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.settings,
+      page: () => SettingsScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
     ),GetPage(

@@ -68,7 +68,7 @@ class _SignInScreenState extends State<SignInScreen> {
                    Get.toNamed(RouteName.forgetPassword);
                   },
                   child: Text(
-                    'Forget Password?',
+                    'Forgot Password?',
                     style: TextStyle(color: Colors.black),
                   ),
                 ),

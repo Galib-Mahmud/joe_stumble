@@ -53,6 +53,7 @@ static const String mySavedPost='/mySavedPost';
 static const String myVedio='/myVedio';
 static const String termsOfUse='/termsOfUse';
 static const String privacy='/privacy';
+static const String settings='/settings';
 static const String dataRetension='/dataRetension';
 static const String supportScreen='/supportScreen';
 static const String setYourPin='/setYourPin';

@@ -37,7 +37,7 @@ class _UserNameState extends State<UserName> {
               children: [
                 SizedBox(height: 70.h),
                 Text(
-                  "Choose your name",
+                  "Choose your  username",
                   style: TextStyle(
                     fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
@@ -50,10 +50,10 @@ class _UserNameState extends State<UserName> {
 
                   width: 250.w,
                   child: TextField(
+                    textAlign: TextAlign.center,
 
                     decoration: InputDecoration(
-
-                      hintText: "Your Name",
+                      hintText: " Enter your name",
                       border: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey),),
                     ),

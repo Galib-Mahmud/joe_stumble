@@ -135,7 +135,7 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
               },
             ),
 
-            SizedBox(height: 40.h),
+            SizedBox(height: 20.h),
 
             // Privacy and Terms Text
             Row(

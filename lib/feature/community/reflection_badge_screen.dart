@@ -84,7 +84,7 @@ class ReflectionBadgeScreen extends StatelessWidget {
                 // Next Button with Linear Gradient
                 CustomButton(text: "Next", onPressed: () {
 
-                  Get.toNamed(RouteName.homeDashBoard);
+                  Get.toNamed(RouteName.testDashBoard);
 
 
 
