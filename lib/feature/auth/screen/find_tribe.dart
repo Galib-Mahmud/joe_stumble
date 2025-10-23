@@ -1,29 +1,22 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:joe_stumble/feature/auth/birthday_screen.dart';
-import 'package:joe_stumble/feature/auth/reset_password_screen.dart';
+
+import 'package:joe_stumble/feature/splash/question1.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 import 'package:joe_stumble/route/route_name.dart';
-import '../widget/splash/custom_text_field.dart';
 
-class UserName extends StatefulWidget {
-  const UserName({super.key});
+class FindYourTribeScreen extends StatefulWidget {
+  const FindYourTribeScreen({super.key});
 
   @override
-  State<UserName> createState() => _UserNameState();
+  State<FindYourTribeScreen> createState() => _FindYourTribeScreenState();
 }
 
-class _UserNameState extends State<UserName> {
-
-
-
+class _FindYourTribeScreenState extends State<FindYourTribeScreen> {
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: CustomAppBar(),
       backgroundColor: Colors.white,
@@ -36,55 +29,63 @@ class _UserNameState extends State<UserName> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: 70.h),
+
+                // Title
                 Text(
-                  "Choose your  username",
+                  "Find Your Tribe",
                   style: TextStyle(
                     fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
+
                 SizedBox(height: 30.h),
 
-                SizedBox(
+                // Image
+                Image.asset(
+                  'assets/images/auth/new.png', // replace with your actual asset
 
-                  width: 250.w,
-                  child: TextField(
-                    textAlign: TextAlign.center,
-
-                    decoration: InputDecoration(
-                      hintText: " Enter your name",
-                      border: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey),),
-                    ),
-                  ),
+                  fit: BoxFit.cover,
                 ),
 
                 SizedBox(height: 120.h),
-                // Countdown Text
+
+                // Button
+                CustomButton(
+                  text: "Take a quiz",
+                  onPressed: () {
+                  Get.toNamed(RouteName.question1);
+                  },
+                ),
+
+                SizedBox(height: 20.h),
+
+                // Pricing text
                 Text(
-                  "This helps us keep you anonymous",
+                  "\$2.49/month, billed yearly at \$29.99",
                   style: TextStyle(
                     fontSize: 13.sp,
                     color: Colors.black,
                   ),
                 ),
 
-                SizedBox(height: 30.h),
+                SizedBox(height: 10.h),
 
-                CustomButton(
-                  text: "Next",
+                // Restore purchases
+                TextButton(
                   onPressed: () {
-
-                   Get.toNamed(RouteName.birthday);
+                    // TODO: Add restore purchase logic
                   },
+                  child: Text(
+                    "Restore purchases",
+                    style: TextStyle(
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
-
-
-
-
-
-
               ],
             ),
           ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:joe_stumble/feature/auth/otp_screen.dart';
+
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 import 'package:joe_stumble/route/route_name.dart';
-import '../widget/splash/custom_text_field.dart';
+import '../../widget/splash/custom_text_field.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});

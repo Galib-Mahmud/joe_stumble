@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:joe_stumble/feature/auth/forgot_password_screen.dart';
+import 'package:joe_stumble/feature/auth/screen/forgot_password_screen.dart';
 
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_text_field.dart';
 import 'package:joe_stumble/route/route_name.dart';
 
-import '../widget/splash/custom_appbar.dart';
+import '../../widget/splash/custom_appbar.dart';
 
 class SignInScreen extends StatefulWidget {
   @override

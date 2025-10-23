@@ -2,12 +2,14 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:joe_stumble/feature/auth/forgot_password_screen.dart';
-import 'package:joe_stumble/feature/auth/username_screen.dart';
+import 'package:joe_stumble/feature/auth/screen/forgot_password_screen.dart';
+import 'package:joe_stumble/feature/auth/screen/username_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_text_field.dart';
 import 'package:joe_stumble/route/route_name.dart';
+
+import '../controller/signup_controller.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -15,6 +17,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final SignupController controller = Get.put(SignupController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               CustomTextField(
                 labelText: "E-mail",
+                controller: controller.emailController,
                 width: 340.w,
                 height: 49.h,
               ),
@@ -47,6 +51,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               CustomTextField(
                 labelText: "Password",
+                controller: controller.passwordController,
                 width: 340.w,
                 height: 49.h,
                 isPassword: true,
@@ -55,6 +60,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               CustomTextField(
                 labelText: "Re-Type Password",
+                controller: controller.confirmPasswordController,
                 width: 340.w,
                 height: 49.h,
                 isPassword: true,
@@ -64,7 +70,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
               CustomButton(text: "Sign Up", onPressed: () {
-               Get.toNamed(RouteName.username);
+               controller.register();
+
               }),
               SizedBox(height: 30.h),
 
@@ -167,7 +174,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Get.toNamed(RouteName.signin);
+                      // Get.toNamed(RouteName.signin);
                     },
                     child: Text(
                       'Sign in',

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUtil
 import 'package:get/get.dart';
-import 'package:joe_stumble/feature/auth/sign_in_screen.dart';
+
 import 'package:joe_stumble/feature/splash/question1.dart';
 import 'package:joe_stumble/route/route_name.dart';
 import '../widget/splash/custom_button.dart'; // Import CustomButton

@@ -1,18 +1,11 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
-import 'package:joe_stumble/feature/auth/birthday_screen.dart';
-import 'package:joe_stumble/feature/auth/find_tribe.dart';
-import 'package:joe_stumble/feature/auth/forgot_password_screen.dart';
-import 'package:joe_stumble/feature/auth/gender_screen.dart';
-import 'package:joe_stumble/feature/auth/get_mentor.dart';
-import 'package:joe_stumble/feature/auth/introduce_yourself_screen.dart';
-import 'package:joe_stumble/feature/auth/otp_screen.dart';
-import 'package:joe_stumble/feature/auth/reset_password_screen.dart';
-import 'package:joe_stumble/feature/auth/select_avatar_screen.dart';
-import 'package:joe_stumble/feature/auth/sign_in_screen.dart';
-import 'package:joe_stumble/feature/auth/sign_up_screen.dart';
-import 'package:joe_stumble/feature/auth/terms_and_condition_screen.dart';
-import 'package:joe_stumble/feature/auth/username_screen.dart';
+import 'package:joe_stumble/feature/auth/screen/birthday_screen.dart';
+
+import 'package:joe_stumble/feature/auth/screen/forgot_password_screen.dart';
+
+import 'package:joe_stumble/feature/auth/screen/introduce_yourself_screen.dart';
+import 'package:joe_stumble/feature/auth/screen/username_screen.dart';
 import 'package:joe_stumble/feature/community/community_picker_screen.dart';
 import 'package:joe_stumble/feature/community/courage_badge_screen.dart';
 import 'package:joe_stumble/feature/community/day_one_badge_screen.dart';
@@ -47,6 +40,15 @@ import 'package:joe_stumble/feature/splash/question4.dart';
 import 'package:joe_stumble/feature/splash/question5.dart';
 import 'package:joe_stumble/route/route_name.dart';
 
+import '../feature/auth/screen/find_tribe.dart';
+import '../feature/auth/screen/gender_screen.dart';
+import '../feature/auth/screen/get_mentor.dart';
+import '../feature/auth/screen/otp_screen.dart';
+import '../feature/auth/screen/reset_password_screen.dart';
+import '../feature/auth/screen/select_avatar_screen.dart';
+import '../feature/auth/screen/sign_in_screen.dart';
+import '../feature/auth/screen/sign_up_screen.dart';
+import '../feature/auth/screen/terms_and_condition_screen.dart';
 import '../feature/home/test_home_page.dart';
 import '../feature/splash/loading_splash_screen.dart';
 import '../feature/splash/onboarding_screen2.dart';

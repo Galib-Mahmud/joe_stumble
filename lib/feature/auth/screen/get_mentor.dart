@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:joe_stumble/feature/auth/find_tribe.dart';
-import 'package:joe_stumble/feature/auth/reset_password_screen.dart';
+
 import 'package:joe_stumble/feature/community/community_picker_screen.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';

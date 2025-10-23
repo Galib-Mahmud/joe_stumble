@@ -1,20 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:joe_stumble/feature/auth/gender_screen.dart';
-import 'package:joe_stumble/feature/splash/question1.dart';
+
 import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 import 'package:joe_stumble/route/route_name.dart';
 
-class FindYourTribeScreen extends StatefulWidget {
-  const FindYourTribeScreen({super.key});
+class GenderScreen extends StatefulWidget {
+  const GenderScreen({super.key});
 
   @override
-  State<FindYourTribeScreen> createState() => _FindYourTribeScreenState();
+  State<GenderScreen> createState() => _GenderScreenState();
 }
 
-class _FindYourTribeScreenState extends State<FindYourTribeScreen> {
+class _GenderScreenState extends State<GenderScreen> {
+  String? _selectedOption; // store selected gender
+
+  void _handleRadioValueChange(String? value) {
+    setState(() {
+      _selectedOption = value;
+    });
+  }
+
+  Widget buildRadioOption(String value) {
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      title: Text(
+        value,
+        style: TextStyle(fontSize: 16.sp, color: Colors.black),
+      ),
+      leading: Radio<String>(
+        value: value,
+        groupValue: _selectedOption,
+        onChanged: _handleRadioValueChange,
+        activeColor: Colors.orange,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,62 +52,45 @@ class _FindYourTribeScreenState extends State<FindYourTribeScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: 70.h),
-
-                // Title
                 Text(
-                  "Find Your Tribe",
+                  "What’s your gender?",
                   style: TextStyle(
                     fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
-
                 SizedBox(height: 30.h),
 
-                // Image
-                Image.asset(
-                  'assets/images/auth/new.png', // replace with your actual asset
-
-                  fit: BoxFit.cover,
+                // Radio Buttons
+                Column(
+                  children: [
+                    buildRadioOption('Male'),
+                    buildRadioOption('Female'),
+                    buildRadioOption('Other'),
+                  ],
                 ),
 
                 SizedBox(height: 120.h),
 
-                // Button
-                CustomButton(
-                  text: "Take a quiz",
-                  onPressed: () {
-                  Get.toNamed(RouteName.question1);
-                  },
-                ),
-
-                SizedBox(height: 20.h),
-
-                // Pricing text
                 Text(
-                  "\$2.49/month, billed yearly at \$29.99",
+                  "This helps us create safe space for all our members",
                   style: TextStyle(
                     fontSize: 13.sp,
                     color: Colors.black,
                   ),
+                  textAlign: TextAlign.center,
                 ),
 
-                SizedBox(height: 10.h),
+                SizedBox(height: 30.h),
 
-                // Restore purchases
-                TextButton(
+                CustomButton(
+                  text: "Next",
                   onPressed: () {
-                    // TODO: Add restore purchase logic
+
+                      Get.toNamed(RouteName.findYourTribute);
+
                   },
-                  child: Text(
-                    "Restore purchases",
-                    style: TextStyle(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black,
-                    ),
-                  ),
                 ),
               ],
             ),
