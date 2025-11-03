@@ -8,6 +8,7 @@ import 'package:joe_stumble/feature/widget/splash/custom_text_field.dart';
 import 'package:joe_stumble/route/route_name.dart';
 
 import '../../widget/splash/custom_appbar.dart';
+import '../controller/sign_in_controller.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  final SignInController signInController = Get.put(SignInController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +47,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
               // Email input field
               CustomTextField(labelText: "E-mail",
+                controller: signInController.emailController,
                 width: 340.w,
                 height: 49.h,
 
@@ -54,6 +57,7 @@ class _SignInScreenState extends State<SignInScreen> {
               // Password input field
               CustomTextField(
                 labelText: "Password",
+                controller: signInController.passwordController,
                 width: 340.w,
                 height: 49.h,
                 isPassword: true,
@@ -76,7 +80,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
               // Sign in button
               CustomButton(text: "Sign In", onPressed: () {
-                Get.toNamed(RouteName.homeDashBoard);
+                signInController.loginUser();
+
               }),
 
               SizedBox(height: 30.h),
@@ -103,39 +108,6 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
 
-              // Google and Apple sign-in buttons with image
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: SizedBox(
-                        height: 56.h,
-                        width: 100.w,
-                        child: Image.asset(
-                          'assets/images/auth/Google.png',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: SizedBox(
-                        height: 56.h,
-                        width: 100.w,
-                        child: Image.asset(
-                          'assets/images/auth/apple.png',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
 
               // Sign up text
               SizedBox(height: 20.h),

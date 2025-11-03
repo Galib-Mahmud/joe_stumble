@@ -96,42 +96,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ],
                 ),
               ),
-              // Google and Apple buttons
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: SizedBox(
-                        height: 56.h,
-                        width: 100.w,
-                        child: Image.asset(
-                          'assets/images/auth/Google.png',
-                          fit: BoxFit.cover,
 
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: SizedBox(
-                        height: 56.h,
-                        width: 90.w,
-
-                        child: Image.asset(
-                          'assets/images/auth/apple.png',
-                          fit: BoxFit.cover,
-
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
               SizedBox(height: 20.h),
 
               // Privacy Policy text
@@ -174,7 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      // Get.toNamed(RouteName.signin);
+                       Get.toNamed(RouteName.signin);
                     },
                     child: Text(
                       'Sign in',

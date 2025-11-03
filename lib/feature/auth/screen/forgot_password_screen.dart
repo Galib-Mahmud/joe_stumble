@@ -6,6 +6,7 @@ import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 import 'package:joe_stumble/route/route_name.dart';
 import '../../widget/splash/custom_text_field.dart';
+import '../controller/forget_pass_controller.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});
@@ -15,6 +16,7 @@ class ForgetPasswordScreen extends StatefulWidget {
 }
 
 class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
+  final ForgetPassController controller = Get.put(ForgetPassController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,15 +47,17 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 labelText: "E-mail",
                 width: 340.w,
                 height: 49.h,
+                controller: controller.emailController,
               ),
               SizedBox(height: 40.h),
           
               // Send OTP Button
               CustomButton(
-                text: "Send OTP",
+                text: "Forget Password",
                 onPressed: () {
+                  controller.forgetPass();
 
-                Get.toNamed(RouteName.otpScreen);
+
                 },
           
               ),
