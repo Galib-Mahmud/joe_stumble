@@ -16,7 +16,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
         actionIcon: "assets/images/avatar/dot.png",
         onAction: () {},
       ),
-      bottomNavigationBar: const CustomNavBar(),
+
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(

@@ -59,5 +59,6 @@ static const String supportScreen='/supportScreen';
 static const String setYourPin='/setYourPin';
 static const String exBlock='/exBlock';
 static const String exBlockCard='/exBlockCard';
+static const String question='/question';
 
 }

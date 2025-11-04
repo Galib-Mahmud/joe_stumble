@@ -6,6 +6,8 @@ import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 import 'package:joe_stumble/route/route_name.dart';
 
+import '../controller/gender_controller.dart';
+
 class GenderScreen extends StatefulWidget {
   const GenderScreen({super.key});
 
@@ -14,28 +16,22 @@ class GenderScreen extends StatefulWidget {
 }
 
 class _GenderScreenState extends State<GenderScreen> {
-  String? _selectedOption; // store selected gender
-
-  void _handleRadioValueChange(String? value) {
-    setState(() {
-      _selectedOption = value;
-    });
-  }
+  final genderController = Get.put(GenderController());
 
   Widget buildRadioOption(String value) {
-    return ListTile(
+    return Obx(() => ListTile(
       contentPadding: EdgeInsets.zero,
       title: Text(
         value,
         style: TextStyle(fontSize: 16.sp, color: Colors.black),
       ),
       leading: Radio<String>(
-        value: value,
-        groupValue: _selectedOption,
-        onChanged: _handleRadioValueChange,
+        value: value.toLowerCase(),
+        groupValue: genderController.selectedGender.value,
+        onChanged: (val) => genderController.setGender(val),
         activeColor: Colors.orange,
       ),
-    );
+    ));
   }
 
   @override
@@ -49,7 +45,6 @@ class _GenderScreenState extends State<GenderScreen> {
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: 70.h),
                 Text(
@@ -61,8 +56,6 @@ class _GenderScreenState extends State<GenderScreen> {
                   ),
                 ),
                 SizedBox(height: 30.h),
-
-                // Radio Buttons
                 Column(
                   children: [
                     buildRadioOption('Male'),
@@ -70,28 +63,21 @@ class _GenderScreenState extends State<GenderScreen> {
                     buildRadioOption('Other'),
                   ],
                 ),
-
                 SizedBox(height: 120.h),
-
                 Text(
-                  "This helps us create safe space for all our members",
-                  style: TextStyle(
-                    fontSize: 13.sp,
-                    color: Colors.black,
-                  ),
+                  "This helps us create a safe space for all our members",
+                  style: TextStyle(fontSize: 13.sp, color: Colors.black),
                   textAlign: TextAlign.center,
                 ),
-
                 SizedBox(height: 30.h),
-
-                CustomButton(
+                Obx(() => genderController.isLoading.value
+                    ? CircularProgressIndicator()
+                    : CustomButton(
                   text: "Next",
                   onPressed: () {
-
-                      Get.toNamed(RouteName.findYourTribute);
-
+                    genderController.submitGender();
                   },
-                ),
+                )),
               ],
             ),
           ),

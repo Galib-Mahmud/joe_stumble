@@ -8,6 +8,7 @@ import 'package:joe_stumble/feature/widget/splash/custom_appbar.dart';
 import 'package:joe_stumble/feature/widget/splash/custom_button.dart';
 import 'package:joe_stumble/route/route_name.dart';
 import '../../widget/splash/custom_text_field.dart';
+import '../controller/user_name_controller.dart';
 
 class UserName extends StatefulWidget {
   const UserName({super.key});
@@ -17,6 +18,8 @@ class UserName extends StatefulWidget {
 }
 
 class _UserNameState extends State<UserName> {
+
+  final Namecontroller = Get.put(UserNameController());
 
 
 
@@ -50,10 +53,12 @@ class _UserNameState extends State<UserName> {
 
                   width: 250.w,
                   child: TextField(
+                    controller: Namecontroller.nameController,
                     textAlign: TextAlign.center,
 
                     decoration: InputDecoration(
                       hintText: " Enter your name",
+
                       border: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey),),
                     ),
@@ -76,7 +81,9 @@ class _UserNameState extends State<UserName> {
                   text: "Next",
                   onPressed: () {
 
-                   Get.toNamed(RouteName.birthday);
+                    Namecontroller.updateUserName();
+
+
                   },
                 ),
 

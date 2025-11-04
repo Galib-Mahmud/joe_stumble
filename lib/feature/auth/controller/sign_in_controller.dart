@@ -45,7 +45,7 @@ class SignInController extends GetxController {
         UserInfo.setAccessToken(accessToken);
         UserInfo.setRefreshToken(refreshToken);
         print("🟢 [LOGIN] Tokens saved successfully!");
-        Get.toNamed(RouteName.question1);
+        Get.toNamed(RouteName.username);
       } else {
         print("🚫 [LOGIN] Tokens missing in response");
         Get.snackbar("Error", "Invalid response from server");

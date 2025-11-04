@@ -5,6 +5,7 @@ import 'package:joe_stumble/feature/auth/screen/birthday_screen.dart';
 import 'package:joe_stumble/feature/auth/screen/forgot_password_screen.dart';
 
 import 'package:joe_stumble/feature/auth/screen/introduce_yourself_screen.dart';
+import 'package:joe_stumble/feature/auth/screen/question_screen.dart';
 import 'package:joe_stumble/feature/auth/screen/username_screen.dart';
 import 'package:joe_stumble/feature/community/community_picker_screen.dart';
 import 'package:joe_stumble/feature/community/courage_badge_screen.dart';
@@ -305,8 +306,12 @@ class AppRoute {
       page: () => ExBlockCard(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
+    ),GetPage(
+      name: RouteName.question,
+      page: () => QuestionScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 300),
     ),
-
 
 
 
