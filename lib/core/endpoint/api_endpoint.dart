@@ -11,6 +11,5 @@ class ApiEndpoint {
   static const String gender = "/authentication/onboarding/steps/gender/";
   static const String getQuestions = "/authentication/onboarding/questions/";
   static const String submitAnswer = "/authentication/onboarding/steps/question-answer/";
-  static const String getAvatar = "/authentication/onboarding/avatars-list/";
   static const String submitAvatar = "/authentication/onboarding/steps/avatar/";
 }

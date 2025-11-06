@@ -34,6 +34,14 @@ class QuestionScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
+              SizedBox(height: 20.h),
+
+              Text(
+                "Question ${controller.currentQuestionIndex.value + 1}/${controller.questions.length}",
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 20.h),
               // Progress bar
               LinearProgressIndicator(
                 minHeight: 7.h,
@@ -43,11 +51,7 @@ class QuestionScreen extends StatelessWidget {
               ),
               SizedBox(height: 20.h),
 
-              // Question number
-              Text(
-                "Question ${controller.currentQuestionIndex.value + 1}/${controller.questions.length}",
-                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
-              ),
+
               SizedBox(height: 10.h),
 
               // Question text

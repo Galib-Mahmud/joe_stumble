@@ -147,12 +147,17 @@ class AppRoute {
       page: () => Question5(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 300),
-    ),GetPage(
-      name: RouteName.selectAvatar,
-      page: () => SelectAvatar(),
-      transition: Transition.rightToLeft,
-      transitionDuration: Duration(milliseconds: 300),
-    ),GetPage(
+    ),
+
+
+    // GetPage(
+    //   name: RouteName.selectAvatar,
+    //   page: () => SelectAvatar(),
+    //   transition: Transition.rightToLeft,
+    //   transitionDuration: Duration(milliseconds: 300),
+    // ),
+    //
+    GetPage(
       name: RouteName.introduceYourself,
       page: () => IntroduceYourselfScreen(),
       transition: Transition.rightToLeft,
