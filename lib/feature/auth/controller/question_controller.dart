@@ -116,7 +116,7 @@ class GetQuestionController extends GetxController {
       currentQuestionIndex.value++;
     } else {
 
-      Get.toNamed(RouteName.homeDashBoard);
+      Get.toNamed(RouteName.selectAvatar);
       Get.snackbar("Completed", "All questions answered!");
       // navigate to summary or result page
     }
